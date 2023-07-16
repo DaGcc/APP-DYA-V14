@@ -1,0 +1,18 @@
+
+<section class="skeleton-cont" *ngIf="load">
+    <div>
+         <p-skeleton width="80px" styleClass="p-mb-2" borderRadius="16px"></p-skeleton>
+         <p-skeleton width="80px" styleClass="p-mb-2" borderRadius="16px"></p-skeleton>
+    </div>
+    <p-skeleton shape="circle" size="12rem"></p-skeleton>
+
+</section>
+
+<div class="cont-piechart"  *ngIf="!load">
+
+    <canvas baseChart class="chart" id="chart"   style="position: relative;  height:100% !important; width: 100% !important; color: #fff !important;"
+        [data]="pieChartData"
+        [type]="pieChartType"
+        [options]="pieChartOptions">
+    </canvas>
+</div>

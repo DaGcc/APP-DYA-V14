@@ -1,0 +1,25 @@
+<div class="form-main">
+    <div class="form-content">
+        <div class="box">
+            <h3 class="font" data-aos="fade-left" data-aos-duration="500">Recuperar cuenta</h3>
+            <form [formGroup]="form" (ngSubmit)="enviarCorreo()">
+                <!-- <div class="input-box">
+                    <input type="text" placeholder="Email" class="input-control" formControlName="email">
+                </div> -->
+                <div class="input-box" data-aos="fade-right" data-aos-duration="500">
+                    <mat-form-field appearance="outline" class="font">
+                      <mat-label>Enter your email</mat-label>
+                      <input matInput placeholder="pat@example.com" [formControl]="MyEmailControl" required>
+                      <mat-error *ngIf="MyEmailControl.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                  </div>
+                <button type="submit" class="btn font" data-aos="zoom-out-up"  data-aos-duration="500" data-aos-delay="300" >Enviar</button>
+            </form>
+            <mat-progress-bar mode="buffer" data-aos="zoom-out-up" data-aos-duration="500" data-aos-delay="500" [value]="porcentaje"></mat-progress-bar>
+
+        </div>
+    </div>
+</div>
+<!-- 
+<router-outlet ></router-outlet> -->
+<!-- DATO MEMORIA: Un componente que sera de dialogo no puede tener el router por ser propiamene dicho dialogop -->

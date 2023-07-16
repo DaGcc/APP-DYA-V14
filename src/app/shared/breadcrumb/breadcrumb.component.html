@@ -1,0 +1,8 @@
+<div class="cont-bradcrumb">
+    <mat-toolbar class="tl">
+        <span>{{titulo | titlecase }}</span>
+        <span class="example-spacer"></span>
+        <p-breadcrumb class="bread" [model]="items" [home]="home" (onItemClick)="item($event)"></p-breadcrumb>
+    </mat-toolbar>
+
+</div>

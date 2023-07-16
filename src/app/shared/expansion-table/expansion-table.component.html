@@ -1,0 +1,32 @@
+
+<div class="cont-expansion-table">
+
+    <mat-accordion class="example-headers-align custom-panel" multi >
+        <mat-expansion-panel class= "custom-panel" [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Personal data
+            </mat-panel-title>
+            <mat-panel-description>
+              Type your name and age
+              <mat-icon>account_circle</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field appearance="fill">
+            <mat-label>First name</mat-label>
+            <input matInput>
+          </mat-form-field>
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" min="1">
+          </mat-form-field>
+          
+          <div class="app-cont-table">
+              <app-table></app-table>
+          </div>
+        </mat-expansion-panel>
+    
+    </mat-accordion>
+</div>

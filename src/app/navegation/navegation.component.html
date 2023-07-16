@@ -1,0 +1,101 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <span style="user-select: none;">Menu</span> <span class="example-spacer"></span>
+      <section class="cont-info">
+        <div class="cont-img">
+          <img class="img" src="../../assets/img/logo/angular.png" alt="">
+        </div>
+      </section>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+    <!-- <mat-selection-list>
+      <a mat-list-item routerLink="home" routerLinkActive="ative" [routerLinkActiveOptions]="{exact: true}"
+        (click)="cambiar()">
+        <div>
+          <mat-icon>home</mat-icon> <span>Inicio</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="dashboard" routerLinkActive="ative" [routerLinkActiveOptions]="{exact: true}"
+        (click)="cambiar()">
+        <div>
+          <mat-icon>dashboard</mat-icon> <span>Dashboard</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="empleados" routerLinkActive="ative" [routerLinkActiveOptions]="{exact: true}"
+        (click)="cambiar()">
+        <div>
+          <mat-icon>recent_actors</mat-icon> <span>Empleados</span>
+        </div>
+      </a>
+      <a mat-list-item routerLink="productos" routerLinkActive="ative" [routerLinkActiveOptions]="{exact: true}"
+        (click)="cambiar()">
+        <div>
+          <mat-icon>storefront</mat-icon> <span>Productos</span>
+        </div>
+      </a>
+      
+    </mat-selection-list> -->
+    
+    <div class="cont-menu">
+      <div class="cont-tab-menu">
+        <p-panelMenu  [model]="items" [style]="{'width':'100%'}" routerLinkActive="ative"  [multiple]="true">
+        </p-panelMenu>
+      </div>
+
+    </div>
+    
+    <section class="footer-sidenav">
+      <div class="cont-img">
+        <img src="../../assets/img_login/sad.png" alt="">
+      </div>
+      <!-- <span class="example-spacer"></span> -->
+      <div class="info-user">
+        <p>Daniel Gutierrez</p>
+        <span>gutierrescallazacadaniel@gmail.com</span>
+      </div>
+    </section>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="contenido">
+
+    <!-- Add Content Here -->
+    
+    <div class="cont-router">
+      <mat-toolbar color="warn" class="tool-bar">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>{{"app-gc "| titlecase}}</span>
+        <span class="example-spacer"></span>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon class="material-icons">more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" style="width: 600px;">
+            <button mat-menu-item  routerLink="/login">
+              <mat-icon style="color: #f90e59;">login</mat-icon>
+              <span>Iniciar session</span>
+            </button>
+            <button mat-menu-item  routerLink="/inicio">
+              <mat-icon style="color: #f90e59;">person</mat-icon>
+              <span>Mi perfil</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon style="color: #f90e59;">logout</mat-icon>
+              <span>Cerrar session</span>
+            </button>
+          </mat-menu>
+        </div>
+      </mat-toolbar>
+      <app-breadcrumb class="bread"></app-breadcrumb>
+
+      <div class="rr">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <!-- End Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

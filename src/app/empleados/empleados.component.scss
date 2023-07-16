@@ -1,0 +1,20 @@
+.cont-empleados{
+    margin: 25px;
+}
+
+.cont-app-espansion-table{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // flex-wrap: wrap;
+    gap: 30px;
+    flex-direction: column;
+    // background-color: red;
+}
+
+.app-expansion-table{
+    display: block;
+    width: 100% !important;
+}

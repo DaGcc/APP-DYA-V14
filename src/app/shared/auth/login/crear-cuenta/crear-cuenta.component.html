@@ -1,0 +1,135 @@
+<section class="body">
+
+    <div class="form-content">
+
+        <mat-stepper labelPosition="bottom" headerPosition="top" [linear]="true" color="accent" #stepper
+            class="step-cont">
+            <mat-step [stepControl]="firstFormGroup" [editable]="true">
+                <form class="form" [formGroup]="firstFormGroup" #FormDatos="ngForm">
+                    <ng-template matStepLabel>Completa tus datos</ng-template>
+
+                    <div class="item-form">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Nombres</mat-label>
+                            <input matInput placeholder="Primer nombre, Segundo nombre" formControlName="nombres"
+                                minlength="2">
+                        </mat-form-field>
+                    </div>
+                    <div class="item-form">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Apellido paterno</mat-label>
+                            <input matInput formControlName="apellidoPaterno" minlength="3">
+                        </mat-form-field>
+                    </div>
+                    <div class="item-form">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Apellido materno</mat-label>
+                            <input matInput formControlName="apellidoMaterno" minlength="3">
+                        </mat-form-field>
+                    </div>
+                    <div class="item-form">
+                        <mat-form-field appearance="outline">
+                            <mat-label>DNI</mat-label>
+                            <input matInput type="number" class="example-number" placeholder="Ej. 11111111"
+                                formControlName="dni" min="10000000" max="99999999">
+                        </mat-form-field>
+                    </div>
+                    <div class="item-form">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Edad</mat-label>
+                            <input type="number" min="18" max="120" matInput class="example-number"
+                                placeholder="Mayor de edad" formControlName="edad">
+                        </mat-form-field>
+                    </div>
+                    <div class="item-form">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Direccion</mat-label>
+                            <input matInput formControlName="direccion" minlength="3" maxlength="110">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="item-form">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Telefono</mat-label>
+                            <input matInput type="number" class="example-number" placeholder="Ej. 900000000"
+                                formControlName="telefono" min="900000000" max="999999999">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="btn-form-cont">
+                        <button mat-button matStepperNext type="button" color="primary"> Siguiente
+                            <mat-icon>navigate_next</mat-icon></button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" [editable]="true">
+                <form class="form" [formGroup]="secondFormGroup" #FormSecond="ngForm" (ngSubmit)="crearCuenta()">
+                    <ng-template matStepLabel>Datos de tu cuenta</ng-template>
+
+
+                    <div class="item-form">
+                        <mat-form-field appearance="outline" class="input-pass font" >
+                            <mat-label>Selecciona tu rol familiar</mat-label>
+                            <mat-select formControlName="rolFamilia" name="food">
+                                <mat-option *ngFor="let rlf of listaRolesFamilia" [value]="rlf">
+                                    {{rlf.nombre}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="item-form">
+                        <mat-form-field appearance="outline" class="input-pass font" >
+                            <mat-label>Selecciona tu genero</mat-label>
+                            <mat-select formControlName="genero" name="food">
+                                <mat-option *ngFor="let g of listaGenero" [value]="g">
+                                    {{g.nombre}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    
+
+                    <div class="item-form">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email" maxlength="80" placeholder="Ej. example@gmail.com"
+                                [formControl]="MyEmailControl">
+                            <mat-error *ngIf="MyEmailControl.invalid">{{getErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="item-form">
+                        <mat-form-field appearance="outline" class="input-pass font">
+                            <mat-label>Ingresa tu contraseña</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                            <button mat-icon-button matSuffix type="button" (click)="hide = !hide"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="item-form">
+                        <mat-form-field appearance="outline" class="input-pass font">
+                            <mat-label>Repita su contraseña</mat-label>
+                            <input matInput [type]="hideTow ? 'password' : 'text'" formControlName="passwordRep">
+                            <button mat-icon-button matSuffix type="button" (click)="hideTow = !hideTow"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideTow">
+                                <mat-icon>{{hideTow ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="btn-form-cont">
+                        <button mat-button color="primary" [disabled]="FormSecond.invalid" type="submit"> Realizar
+                            <mat-icon>check_small</mat-icon></button>
+                        <button mat-button matStepperPrevious color="primary"><mat-icon>navigate_before</mat-icon>
+                            Anterior </button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-stepper>
+    </div>
+
+
+</section>

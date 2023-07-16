@@ -1,0 +1,147 @@
+<!-- <div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async ; let i = index" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+
+        <div class="cont-card">
+          <div class="cont-bar">
+            <app-bar-chart *ngIf="i==0" [data]="data" [labels]="labels" [load]="false">
+
+            </app-bar-chart>
+          </div>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+ -->
+
+<div class="cont-dash">
+  <section class="cont-head-dash">
+    <div>
+      <div class="acction">
+        <span>Gafrica de barras y lineal</span>
+        <span class="example-spacer"></span>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>refresh</mat-icon>
+              <span>acualizar datos</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>arrow_back_ios</mat-icon>
+              <span>atras</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>arrow_forward_ios</mat-icon>
+              <span>siguiente</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+      <div class="cont-app-bar-chart">
+        <app-bar-chart [data]="data" [labels]="labels" [load]="load"></app-bar-chart>
+      </div>
+    </div>
+  </section>
+
+  <section class="cont-footer-dash">
+    <div class="cont-one">
+      <div class="one">
+        <div class="acctionTwo">
+          <span>Gafrica de barras y lineal</span>
+          <span class="example-spacer"></span>
+          <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>refresh</mat-icon>
+                <span>acualizar datos</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>arrow_back_ios</mat-icon>
+                <span>atras</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>arrow_forward_ios</mat-icon>
+                <span>siguiente</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <div class="cont-app-bar-pie">
+          <app-pie-chart [data]="dataTwo" [labels]="labelsTwo" [load]="load" [type]="'doughnut'"></app-pie-chart>
+        </div>
+      </div>
+      <div class="one">
+        <div class="acctionTwo">
+          <span>Gafrica de barras y lineal</span>
+          <span class="example-spacer"></span>
+          <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>refresh</mat-icon>
+                <span>acualizar datos</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>arrow_back_ios</mat-icon>
+                <span>atras</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>arrow_forward_ios</mat-icon>
+                <span>siguiente</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+        <div class="cont-app-bar-pie">
+          <app-pie-chart [data]="dataTwo" [labels]="labelsTwo" [load]="load" [type]="'polarArea'"></app-pie-chart>
+        </div>
+      </div>
+    </div>
+    <div class="cont-two">
+      <div class="cont-one">
+        <div class="one">
+          <div class="acctionTwo">
+            <span>Auditoria</span>
+            <span class="example-spacer"></span>
+            <div>
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>refresh</mat-icon>
+                  <span>acualizar tabla</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+          <div class="cont-table">
+            <app-table></app-table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

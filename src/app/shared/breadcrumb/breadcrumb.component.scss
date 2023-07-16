@@ -1,0 +1,33 @@
+
+.cont-bradcrumb{
+    background-color: inherit;
+    box-shadow: inherit;
+}
+.bread {
+    border: none !important;
+    background-color: transparent;
+}
+
+::ng-deep .p-breadcrumb {
+    border: none !important;
+    font-size: small !important;
+    background-color: transparent;
+    
+    & li{
+        font-size: smaller !important;
+    }
+}
+
+.tl{
+    background-color: inherit;
+    // box-shadow: inherit;
+}
+
+@media screen and (max-width : 900px) {
+
+    ::ng-deep .p-breadcrumb {
+        border: none !important;
+        font-size: x-small !important;
+        background-color: transparent;
+    }
+}
